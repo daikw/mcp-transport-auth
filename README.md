@@ -1,16 +1,19 @@
-A simple MCP server that exposes
+# mcp-transport-auth
+
+A simple MCP server with basic auth transport.
 
 ## Usage
 
-Start the server using either stdio (default) or SSE transport:
+Start the server and client, using SSE transport with basic auth:
 
 ```bash
-# Using SSE transport with basic auth
-uv run mcp-transport-auth
+# MCP Server
+## Using SSE transport with basic auth
+USERNAME=admin PASSWORD=pass uv run mcp-transport-auth --port 8000
 
-# Using SSE transport without basic auth
+## Using SSE transport without basic auth
 uv run mcp-transport-auth -w
 
-# Using SSE transport on custom port
-uv run mcp-transport-auth --port 8000
+# MCP Client
+USERNAME=admin PASSWORD=pass uv run mcp-transport-auth-client
 ```
